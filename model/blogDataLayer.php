@@ -2,6 +2,10 @@
 	
 	interface BlogDataLayer
 	{
+		private $f3;
+		private $model;
+		private $user;
+		
 		//get blog data from DB action
 			public function getAllBloggers();
 			public function getAllUsers();
@@ -15,15 +19,7 @@
 				
 			//edit blog actions
 				public function updateBlog($blogId, $title, $content, $tags);
-				
-		
-		//login actions
-			//create account actions
-				public function createUser($userName, $profileImg, $bio, );
-				
-			//update account actions
-				public function changePassword($userId, $password);
-		
+
 	}
 	
 	

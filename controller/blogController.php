@@ -16,7 +16,7 @@
 			
 			
 			//load the view
-            //echo Template::instance()->render('view/home.php');
+            echo Template::instance()->render('view/home.php');
 		}
 		
 		public function getBlogByUser()
@@ -34,7 +34,7 @@
 			
 			
 			//load the view
-            //echo Template::instance()->render('view/home.php');
+            echo Template::instance()->render('view/singleBlog.php');
 		}
 		
 		public function createBlog()

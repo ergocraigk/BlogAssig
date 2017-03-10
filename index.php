@@ -6,9 +6,6 @@
 	//adjust error reporting
     $f3->set('DEBUG', 3); //0 - suppress most errors, 3 - verbose error messages
 	
-	$f3->route('GET /',    function() {
-		echo 'Hello, world!';
-		});
 	
 	//notes
 	
@@ -21,21 +18,27 @@
 	
 	//controller calls the view. not the route
 	
+	$f3->route('GET /',    function() {
+		$controller = new BlogController($f3);
+		$controller->getHomePage();
+	});
+	
+	$f3->route('GET /singleBlog', function() {
+		$controller = new BlogController($f3);
+		$controller->viewSingleBlog();
+	});
 	
 	
+	$f3->route('GET /login', function() {
+		$controller = new LoginController($f3);
+		$controller->displayLogin();
+	});
+	
+	$f3->route('POST /login', function() {
+		$controller = new LoginController($f3);
+		$controller->login($f3);
+	});
 	/*
-	$f3->route('GET /', function() {
-		
-	});
-	
-	$f3->route('GET /', function() {
-		
-	});
-	
-	$f3->route('GET /', function() {
-		
-	});
-	
 	$f3->route('GET /', function() {
 		
 	});
